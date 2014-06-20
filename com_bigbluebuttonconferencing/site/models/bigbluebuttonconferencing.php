@@ -25,13 +25,15 @@ Versions:
 // No direct access
  
 defined( '_JEXEC' ) or die( 'Restricted access' );
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
  
 jimport( 'joomla.application.component.model' );
  
 /**
  * BigBlueButton Model
  */
-class BigBlueButtonModelMeeting extends JModel
+class BigBlueButtonModelMeeting extends JModelLegacy
 {
     /**
     * Gets the greeting
@@ -41,7 +43,7 @@ class BigBlueButtonModelMeeting extends JModel
     {
 		db =& JFactory::getDBO();
  
-		$query = 'SELECT meeting FROM #__bbb';
+		$query = 'SELECT meeting FROM xlgj5_bbb';
 		$db->setQuery( $query );
 		$meeting = $db->loadResult();
 

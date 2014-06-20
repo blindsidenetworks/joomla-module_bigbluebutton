@@ -24,6 +24,8 @@ Versions:
 
 // No direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
  
 jimport('joomla.application.component.controller');
 require_once( JPATH_COMPONENT.DS.'includes'.DS.'bbb_api.php');
@@ -112,7 +114,7 @@ class MeetingsControllerMeeting extends MeetingsController
 	{	
 		//get the meeting
 		$id = JRequest::getVar('id');
-		$query = ' SELECT * FROM #__bbb WHERE id ='.$id;
+		$query = ' SELECT * FROM xlgj5_bbb WHERE id ='.$id;
 		$db =& JFactory::getDBO();
 		$db->setQuery( $query );
 		$meeting = $db->loadObject();
@@ -171,7 +173,7 @@ class MeetingsControllerMeeting extends MeetingsController
 		
 			$meeting->meetingVersion = time();
 			
-			$db->updateObject('#__bbb',$meeting,'id',false);
+			$db->updateObject('xlgj5_bbb',$meeting,'id',false);
 			if ($db->getErrorNum()) {  
 				$msg = $db->getErrorMsg();  
 				$this->setRedirect( 'index.php?option=com_bigbluebuttonconferencing', $msg );
@@ -209,7 +211,7 @@ class MeetingsControllerMeeting extends MeetingsController
 	{	
 		//get the meeting
 		$id = JRequest::getVar('id');
-		$query = ' SELECT * FROM #__bbb WHERE id ='.$id;
+		$query = ' SELECT * FROM xlgj5_bbb WHERE id ='.$id;
 		$db =& JFactory::getDBO();
 		$db->setQuery( $query );
 		$meeting = $db->loadObject();
@@ -250,7 +252,7 @@ class MeetingsControllerMeeting extends MeetingsController
 			$this->setRedirect( 'index.php?option=com_bigbluebuttonconferencing', $msg );
 		}
 		else{ //The meeting was created, and the user will now be joined
-			$query = "DELETE FROM #__bbb WHERE id=".$id;
+			$query = "DELETE FROM xlgj5_bbb WHERE id=".$id;
 			$db->setQuery( $query );
 			$db->query();
 			
@@ -267,7 +269,7 @@ class MeetingsControllerMeeting extends MeetingsController
 	{	
 		//get the meeting
 		$id = JRequest::getVar('id');
-		$query = ' SELECT * FROM #__bbb WHERE id ='.$id;
+		$query = ' SELECT * FROM xlgj5_bbb WHERE id ='.$id;
 		$db =& JFactory::getDBO();
 		$db->setQuery( $query );
 		$meeting = $db->loadObject();

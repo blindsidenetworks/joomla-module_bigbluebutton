@@ -1,2 +1,2 @@
-DROP TABLE IF EXISTS `#__bbb`;
-DROP TABLE IF EXISTS `#__bbb_settings`;
+DROP TABLE IF EXISTS `xlgj5_bbb`;
+DROP TABLE IF EXISTS `xlgj5_bbb_settings`;

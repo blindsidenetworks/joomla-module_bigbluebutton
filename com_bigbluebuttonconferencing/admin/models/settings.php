@@ -24,6 +24,8 @@ Versions:
 
 // No direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
 jimport('joomla.application.component.model');
 JTable::addIncludePath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_bigbluebuttonconferencing'.DS.'tables');
@@ -32,7 +34,7 @@ JTable::addIncludePath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_bigbluebutton
 /**
  * Meetings Settings Model
  */
-class MeetingsModelSettings extends JModel
+class MeetingsModelSettings extends JModelLegacy
 {
 
 	/**
@@ -48,7 +50,7 @@ class MeetingsModelSettings extends JModel
     function _buildQuery()
     {
         $query = ' SELECT * '
-            . ' FROM #__bbb_settings '
+            . ' FROM xlgj5_bbb_settings '
         ;
         return $query;
     }

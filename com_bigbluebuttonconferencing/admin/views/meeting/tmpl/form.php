@@ -23,6 +23,7 @@ Versions:
 */
 
 defined('_JEXEC') or die('Restricted access'); ?>
+
  
 <form action="index.php" method="post" name="adminForm" id="adminForm">
 <div class="col100">

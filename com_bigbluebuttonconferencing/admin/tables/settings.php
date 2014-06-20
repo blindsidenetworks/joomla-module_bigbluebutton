@@ -24,6 +24,8 @@ Versions:
 
 // No direct access
 defined('_JEXEC') or die('Restricted access');
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
  
 /**
  * Settings Table class
@@ -51,6 +53,6 @@ class TableSettings extends JTable
      * @param object Database connector object
      */
     function TableSettings( &$db ) {
-        parent::__construct('#__bbb_settings', 'id', $db);
+        parent::__construct('xlgj5_bbb_settings', 'id', $db);
     }
 }

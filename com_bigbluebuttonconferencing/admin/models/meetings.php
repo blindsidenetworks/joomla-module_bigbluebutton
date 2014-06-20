@@ -24,11 +24,13 @@ Versions:
  
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
  
 jimport( 'joomla.application.component.model' );
  
 
-class MeetingsModelMeetings extends JModel
+class MeetingsModelMeetings extends JModelLegacy
 {
 
     var $_data;
@@ -41,7 +43,7 @@ class MeetingsModelMeetings extends JModel
     function _buildQuery()
     {
         $query = ' SELECT * '
-            . ' FROM #__bbb '
+            . ' FROM xlgj5_bbb '
         ;
         return $query;
     }

@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS `#__bbb`;
+DROP TABLE IF EXISTS `xlgj5_bbb`;
 
-CREATE TABLE `#__bbb` (
+CREATE TABLE `xlgj5_bbb` (
 	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`meetingName` VARCHAR(50) NOT NULL,
 	`meetingVersion` INT(5) NOT NULL DEFAULT 0,
@@ -12,9 +12,9 @@ CREATE TABLE `#__bbb` (
 
 
 
-DROP TABLE IF EXISTS `#__bbb_settings`;
+DROP TABLE IF EXISTS `xlgj5_bbb_settings`;
 
-CREATE TABLE `#__bbb_settings` (
+CREATE TABLE `xlgj5_bbb_settings` (
 	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(10) NOT NULL,
 	`varValue` VARCHAR(100) NOT NULL,
@@ -23,4 +23,4 @@ CREATE TABLE `#__bbb_settings` (
 	PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__bbb_settings` (`name`,`varValue`,`opening`,`closing`) VALUES ('salt','','Salt of BigBlueButton server:','Can be found in /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties'), ('url','','URL of BigBlueButton server:','eg. http://example.com/bigbluebutton/');
+INSERT INTO `xlgj5_bbb_settings` (`name`,`varValue`,`opening`,`closing`) VALUES ('salt','','Salt of BigBlueButton server:','Can be found in /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties'), ('url','','URL of BigBlueButton server:','eg. http://example.com/bigbluebutton/');

@@ -21,7 +21,8 @@ Versions:
    0.1 --  Initial version written by Omar Shammas
                     (email : omar DOT shammas [a t ] g m ail DOT com)
 */
-
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 require_once( dirname(__FILE__).DS.'php'.DS.'bbb_api.php' );
 
 class modBigBlueButtonHelper{
