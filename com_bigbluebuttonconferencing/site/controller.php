@@ -30,7 +30,7 @@ jimport('joomla.application.component.controller');
 /**
  * BigBlueButton Component Controller
  */
-class BigBlueButtonController extends JController
+class BigBlueButtonController extends JControllerLegacy
 {
     /**
      * Method to display the view

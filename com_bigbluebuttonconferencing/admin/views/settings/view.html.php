@@ -28,13 +28,15 @@ Versions:
  
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
  
 jimport( 'joomla.application.component.view' );
  
 /**
  * Meetings View
  */
-class MeetingsViewSettings extends JView
+class MeetingsViewSettings extends JViewLegacy
 {
 	/**
 	 * display method of meeting view

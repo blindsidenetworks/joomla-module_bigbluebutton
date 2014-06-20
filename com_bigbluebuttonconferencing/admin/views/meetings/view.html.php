@@ -24,6 +24,9 @@ Versions:
 
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
+
 JTable::addIncludePath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_bigbluebuttonconferencing'.DS.'tables');
 jimport( 'joomla.application.component.view' );
  
@@ -33,7 +36,7 @@ jimport( 'joomla.application.component.view' );
  * @package    Joomla.Tutorials
  * @subpackage Components
  */
-class MeetingsViewMeetings extends JView
+class MeetingsViewMeetings extends JViewLegacy
 {
     /**
      * Meetings view display method

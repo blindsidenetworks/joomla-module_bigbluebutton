@@ -24,13 +24,15 @@ Versions:
 
 // No direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
 jimport('joomla.application.component.model');
 
 /**
  * Meetings Meeting Model
  */
-class MeetingsModelMeeting extends JModel
+class MeetingsModelMeeting extends JModelLegacy
 {
 	/**
 	 * Constructor that retrieves the id from the request
@@ -62,7 +64,7 @@ class MeetingsModelMeeting extends JModel
 	{
 		// Load the data
 		if (empty( $this->_data )) {
-			$query = ' SELECT * FROM #__bbb WHERE id = '.$this->_id;
+			$query = ' SELECT * FROM xlgj5_bbb WHERE id = '.$this->_id;
 			$this->_db->setQuery( $query );
 			$this->_data = $this->_db->loadObject();
 		}
@@ -90,7 +92,7 @@ class MeetingsModelMeeting extends JModel
 		
 		//Makes sure there isn't duplicate meetings.
 		$db = JFactory::getDBO();
-		$query = "SELECT * FROM #__bbb";
+		$query = "SELECT * FROM xlgj5_bbb";
 		$db->setQuery($query);
 		$list = $db->loadObjectList();
 

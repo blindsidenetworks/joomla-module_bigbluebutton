@@ -26,6 +26,8 @@ Versions:
 // No direct access
  
 defined( '_JEXEC' ) or die( 'Restricted access' );
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
  
 // Require the base controller
  

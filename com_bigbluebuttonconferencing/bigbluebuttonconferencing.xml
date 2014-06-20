@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install type="component" version="1.5.1">
+<extension type="component" version="3.2" method="upgrade">
 	<name>BigBlueButton Conferencing</name>
 	<!-- The following elements are optional and free of formatting constraints -->
 	<creationDate>2010-08-19</creationDate>
@@ -27,14 +27,14 @@
 		<filename>models/index.html</filename>
 	</files>
 
-	<install>
+	<extension>
 		<sql>
-			<file charset="utf8" driver="mysql">install.sql</file>
+			<file charset="utf8" driver="mysql">views/install.sql</file>
 		</sql>
-	</install>
+	</extension>
 	<uninstall>
 		<sql>
-			<file charset="utf8" driver="mysql">uninstall.sql</file>
+			<file charset="utf8" driver="mysql">views/uninstall.sql</file>
 		</sql>
 	</uninstall>
 
@@ -81,4 +81,4 @@
 		</files>
  
 	</administration>
-</install>
+</extension>

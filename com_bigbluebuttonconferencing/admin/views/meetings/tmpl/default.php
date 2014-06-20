@@ -23,6 +23,8 @@ Versions:
 */
 
 defined('_JEXEC') or die('Restricted access'); 
+//Change the DS function to DIRECTORY_SEPARATOR FUNCTION OF PHP.
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
 require_once( JPATH_COMPONENT.DS.'includes'.DS.'bbb_api.php');
 $msg = null;
